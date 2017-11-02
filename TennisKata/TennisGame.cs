@@ -6,7 +6,7 @@ namespace TennisKata
     {
         public string Score()
         {
-            return String.Empty;
+            return "0:0";
         }
     }
 }
