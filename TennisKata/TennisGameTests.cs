@@ -20,7 +20,7 @@ namespace TennisKata
         }
 
         [Test]
-        public void Player1WinShouldBe15vs0()
+        public void Player1WinOnceShouldBe15vs0()
         {
             var game = new TennisGame();
             game.Player1WinPoint();
