@@ -6,11 +6,6 @@ namespace TennisKata
 {
     public class TennisGame
     {
-        public TennisGame()
-        {
-            player1Score = 0;
-        }
-
         public string Score()
         {
             List<int> scoreMapping = new List<int>
@@ -20,6 +15,7 @@ namespace TennisKata
                 30,
                 40
             };
+
             return string.Format("{0}:0", scoreMapping[player1Score]);
         }
 
