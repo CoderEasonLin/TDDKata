@@ -52,7 +52,6 @@ namespace TennisKata
             var expected = "40:0";
 
             Assert.AreEqual(expected, game.Score());
-            
         }
     }
 }

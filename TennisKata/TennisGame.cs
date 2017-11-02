@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using NUnit.Framework;
 
 namespace TennisKata
 {
@@ -11,12 +13,19 @@ namespace TennisKata
 
         public string Score()
         {
-            return string.Format("{0}:0", player1Score);
+            List<int> scoreMapping = new List<int>
+            {
+                0,
+                15,
+                30,
+                40
+            };
+            return string.Format("{0}:0", scoreMapping[player1Score]);
         }
 
         public void Player1WinPoint()
         {
-            player1Score += 15;
+            player1Score++;
         }
 
         private int player1Score { get; set; }
