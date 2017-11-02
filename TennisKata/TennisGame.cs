@@ -6,7 +6,7 @@ namespace TennisKata
     {
         public TennisGame()
         {
-            player1Score = "0";
+            player1Score = 0;
         }
 
         public string Score()
@@ -16,9 +16,9 @@ namespace TennisKata
 
         public void Player1WinPoint()
         {
-            player1Score = "15";
+            player1Score += 15;
         }
 
-        private string player1Score { get; set; }
+        private int player1Score { get; set; }
     }
 }
