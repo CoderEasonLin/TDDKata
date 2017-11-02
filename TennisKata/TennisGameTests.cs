@@ -53,5 +53,19 @@ namespace TennisKata
 
             Assert.AreEqual(expected, game.Score());
         }
+
+        [Test]
+        public void Player1WinForthShouldBePlayer1Win()
+        {
+            var game = new TennisGame();
+            game.Player1WinPoint();
+            game.Player1WinPoint();
+            game.Player1WinPoint();
+            game.Player1WinPoint();
+
+            var expected = "Game Player1";
+
+            Assert.AreEqual(expected, game.Score());
+        }
     }
 }
