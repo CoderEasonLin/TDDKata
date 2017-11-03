@@ -15,18 +15,18 @@ namespace TennisKata
         private bool player2Won;
         private bool deuce;
 
+        private readonly List<int> _scoreMapping = new List<int>
+        {
+            0,
+            15,
+            30,
+            40
+        };
+
         private const int MAX_POINT_PER_GAME = 4;
 
         public string Score()
         {
-            List<int> scoreMapping = new List<int>
-            {
-                0,
-                15,
-                30,
-                40
-            };
-
             if (deuce)
                 return "Deuce";
             if (player1Won)
@@ -34,7 +34,7 @@ namespace TennisKata
             if (player2Won)
                 return "Game Player2";
 
-            return string.Format("{0}:{1}", scoreMapping[player1Score], scoreMapping[player2Score]);
+            return string.Format("{0}:{1}", _scoreMapping[player1Score], _scoreMapping[player2Score]);
         }
 
         public void Player1WinBall()
