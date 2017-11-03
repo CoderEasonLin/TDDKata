@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace TennisKata
 {
@@ -75,6 +71,18 @@ namespace TennisKata
             game.Player2WinBall();
 
             var expected = "0:15";
+
+            Assert.AreEqual(expected, game.Score());
+        }
+
+        [Test]
+        public void Player1WonOncePlayer2WinOnceShouldBe15vs15()
+        {
+            var game = new TennisGame();
+            game.Player1WinBall();
+            game.Player2WinBall();
+
+            var expected = "15:15";
 
             Assert.AreEqual(expected, game.Score());
         }
