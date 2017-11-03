@@ -67,5 +67,16 @@ namespace TennisKata
 
             Assert.AreEqual(expected, game.Score());
         }
+
+        [Test]
+        public void Player2WinOnceShouldBe0vs15()
+        {
+            var game = new TennisGame();
+            game.Player2WinBall();
+
+            var expected = "0:15";
+
+            Assert.AreEqual(expected, game.Score());
+        }
     }
 }

@@ -8,6 +8,10 @@ namespace TennisKata
     {
         private int player1Score { get; set; }
         private bool player1Won;
+
+        private int player2Score;
+        private bool player2Won;
+
         private const int MAX_POINT_PER_GAME = 4;
 
         public string Score()
@@ -22,7 +26,8 @@ namespace TennisKata
 
             if (player1Won)
                 return "Game Player1";
-            return string.Format("{0}:0", scoreMapping[player1Score]);
+
+            return string.Format("{0}:{1}", scoreMapping[player1Score], scoreMapping[player2Score]);
         }
 
         public void Player1WinBall()
@@ -34,5 +39,13 @@ namespace TennisKata
             }
         }
 
+        public void Player2WinBall()
+        {
+            player2Score++;
+            if (player2Score == MAX_POINT_PER_GAME)
+            {
+                player2Won = true;
+            }
+        }
     }
 }
