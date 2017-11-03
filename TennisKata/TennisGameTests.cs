@@ -119,5 +119,24 @@ namespace TennisKata
             Assert.AreEqual(expected, game.Score());
         }
 
+        [Test]
+        public void WhenDeucePlayer1WinOnceMoreShouldBeAdvantagePlayer1()
+        {
+            var game = new TennisGame();
+            game.Player2WinBall();
+            game.Player2WinBall();
+            game.Player2WinBall();
+            game.Player2WinBall();
+            game.Player1WinBall();
+            game.Player1WinBall();
+            game.Player1WinBall();
+            game.Player1WinBall();
+            game.Player1WinBall();
+
+            var expected = "Advantage Player1";
+
+            Assert.AreEqual(expected, game.Score());
+        }
+
     }
 }

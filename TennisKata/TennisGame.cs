@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Runtime.InteropServices.WindowsRuntime;
 using NUnit.Framework;
 
@@ -12,6 +13,7 @@ namespace TennisKata
 
         private int player2Score;
         private bool player2Won;
+        private bool deuce;
 
         private const int MAX_POINT_PER_GAME = 4;
 
@@ -25,7 +27,7 @@ namespace TennisKata
                 40
             };
 
-            if (player1Score == MAX_POINT_PER_GAME && player2Score == MAX_POINT_PER_GAME)
+            if (deuce)
                 return "Deuce";
             if (player1Won)
                 return "Game Player1";
@@ -38,9 +40,12 @@ namespace TennisKata
         public void Player1WinBall()
         {
             player1Score++;
-            if (player1Score == MAX_POINT_PER_GAME)
+            if (player1Score >= MAX_POINT_PER_GAME)
             {
-                player1Won = true;
+                if (player2Score >= MAX_POINT_PER_GAME)
+                    deuce = true;
+                else
+                    player1Won = true;
             }
         }
 
@@ -49,7 +54,10 @@ namespace TennisKata
             player2Score++;
             if (player2Score == MAX_POINT_PER_GAME)
             {
-                player2Won = true;
+                if (player1Score >= MAX_POINT_PER_GAME)
+                    deuce = true;
+                else
+                    player2Won = true;
             }
         }
     }
