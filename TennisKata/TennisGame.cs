@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using NUnit.Framework;
 
 namespace TennisKata
@@ -26,6 +27,8 @@ namespace TennisKata
 
             if (player1Won)
                 return "Game Player1";
+            if (player2Won)
+                return "Game Player2";
 
             return string.Format("{0}:{1}", scoreMapping[player1Score], scoreMapping[player2Score]);
         }
