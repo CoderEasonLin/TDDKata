@@ -25,6 +25,8 @@ namespace TennisKata
                 40
             };
 
+            if (player1Score == MAX_POINT_PER_GAME && player2Score == MAX_POINT_PER_GAME)
+                return "Deuce";
             if (player1Won)
                 return "Game Player1";
             if (player2Won)
