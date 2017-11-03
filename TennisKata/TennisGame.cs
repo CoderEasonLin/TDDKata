@@ -19,7 +19,7 @@ namespace TennisKata
             return string.Format("{0}:0", scoreMapping[player1Score]);
         }
 
-        public void Player1WinPoint()
+        public void Player1WinBall()
         {
             player1Score++;
         }

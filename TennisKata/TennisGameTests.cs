@@ -23,7 +23,7 @@ namespace TennisKata
         public void Player1WinOnceShouldBe15vs0()
         {
             var game = new TennisGame();
-            game.Player1WinPoint();
+            game.Player1WinBall();
             var expected = "15:0";
 
             Assert.AreEqual(expected, game.Score());
@@ -33,8 +33,8 @@ namespace TennisKata
         public void Player1WinTwiceShouldBe30vs0()
         {
             var game = new TennisGame();
-            game.Player1WinPoint();
-            game.Player1WinPoint();
+            game.Player1WinBall();
+            game.Player1WinBall();
 
             var expected = "30:0";
 
@@ -45,9 +45,9 @@ namespace TennisKata
         public void Player1WinThirdShouldBe40vs0()
         {
             var game = new TennisGame();
-            game.Player1WinPoint();
-            game.Player1WinPoint();
-            game.Player1WinPoint();
+            game.Player1WinBall();
+            game.Player1WinBall();
+            game.Player1WinBall();
 
             var expected = "40:0";
 
@@ -58,10 +58,10 @@ namespace TennisKata
         public void Player1WinForthShouldBePlayer1Win()
         {
             var game = new TennisGame();
-            game.Player1WinPoint();
-            game.Player1WinPoint();
-            game.Player1WinPoint();
-            game.Player1WinPoint();
+            game.Player1WinBall();
+            game.Player1WinBall();
+            game.Player1WinBall();
+            game.Player1WinBall();
 
             var expected = "Game Player1";
 
