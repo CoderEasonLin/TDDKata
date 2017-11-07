@@ -21,7 +21,7 @@ namespace TennisKata
 
         public string Score()
         {
-            if (deuce)
+            if (player1Score >= MAX_POINT_PER_GAME && player2Score >= MAX_POINT_PER_GAME)
             {
                 if(player1Score == player2Score)
                     return "Deuce";
@@ -39,21 +39,11 @@ namespace TennisKata
         public void Player1WinBall()
         {
             player1Score++;
-            if (player1Score >= MAX_POINT_PER_GAME)
-            {
-                if (player2Score >= MAX_POINT_PER_GAME)
-                    deuce = true;
-            }
         }
 
         public void Player2WinBall()
         {
             player2Score++;
-            if (player2Score >= MAX_POINT_PER_GAME)
-            {
-                if (player1Score >= MAX_POINT_PER_GAME)
-                    deuce = true;
-            }
         }
     }
 }
