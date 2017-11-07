@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Runtime.InteropServices.WindowsRuntime;
-using NUnit.Framework;
+﻿using System.Collections.Generic;
 
 namespace TennisKata
 {
     public class TennisGame
     {
         private int player1Score { get; set; }
-        private bool player1Won;
 
         private int player2Score;
-        private bool player2Won;
         private bool deuce;
 
         private readonly List<int> _scoreMapping = new List<int>
@@ -23,15 +17,18 @@ namespace TennisKata
             40
         };
 
-        private const int MAX_POINT_PER_GAME = 4;
+        private const int MAX_POINT_PER_GAME = 3;
 
         public string Score()
         {
             if (deuce)
-                return "Deuce";
-            if (player1Won)
+            {
+                if(player1Score == player2Score)
+                    return "Deuce";
+            }
+            if (player1Score > MAX_POINT_PER_GAME)
                 return "Game Player1";
-            if (player2Won)
+            if (player2Score > MAX_POINT_PER_GAME)
                 return "Game Player2";
 
             return string.Format("{0}:{1}", _scoreMapping[player1Score], _scoreMapping[player2Score]);
@@ -44,20 +41,16 @@ namespace TennisKata
             {
                 if (player2Score >= MAX_POINT_PER_GAME)
                     deuce = true;
-                else
-                    player1Won = true;
             }
         }
 
         public void Player2WinBall()
         {
             player2Score++;
-            if (player2Score == MAX_POINT_PER_GAME)
+            if (player2Score > MAX_POINT_PER_GAME)
             {
-                if (player1Score >= MAX_POINT_PER_GAME)
+                if (player1Score > MAX_POINT_PER_GAME)
                     deuce = true;
-                else
-                    player2Won = true;
             }
         }
     }

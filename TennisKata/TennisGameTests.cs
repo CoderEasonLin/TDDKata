@@ -108,8 +108,6 @@ namespace TennisKata
             game.Player2WinBall();
             game.Player2WinBall();
             game.Player2WinBall();
-            game.Player2WinBall();
-            game.Player1WinBall();
             game.Player1WinBall();
             game.Player1WinBall();
             game.Player1WinBall();
@@ -126,8 +124,6 @@ namespace TennisKata
             game.Player2WinBall();
             game.Player2WinBall();
             game.Player2WinBall();
-            game.Player2WinBall();
-            game.Player1WinBall();
             game.Player1WinBall();
             game.Player1WinBall();
             game.Player1WinBall();
