@@ -23,12 +23,17 @@ namespace TennisKata
         {
             if (player1Score >= MAX_POINT_PER_GAME && player2Score >= MAX_POINT_PER_GAME)
             {
-                if(player1Score == player2Score)
+                int scoreDiff = player1Score - player2Score;
+                if(scoreDiff == 0)
                     return "Deuce";
-                if (player1Score > player2Score)
+                if (scoreDiff == 1)
                     return "Advantage Player1";
-                if (player2Score > player1Score)
+                if (scoreDiff > 1)
+                    return "Game Player1";
+                if (scoreDiff == -1)
                     return "Advantage Player2";
+                if (scoreDiff < -1)
+                    return "Game Player2";
             }
             if (player1Score > MAX_POINT_PER_GAME)
                 return "Game Player1";
