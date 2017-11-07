@@ -17,6 +17,7 @@ namespace TennisKata
         [TestCase(4, 3, "Advantage Player1")]
         [TestCase(3, 4, "Advantage Player2")]
         [TestCase(3, 5, "Game Player2")]
+        [TestCase(5, 3, "Game Player1")]
         public void TennisGameTest(int player1WinTimes, int player2WinTimes, string expected)
         {
             var game = new TennisGame();
