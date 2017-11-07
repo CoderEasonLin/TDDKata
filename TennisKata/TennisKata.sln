@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TennisKata", "TennisKata.csproj", "{816FE297-9A8F-49DE-B8C2-B18B4D51AD18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BowlingKata", "..\BowlingKata\BowlingKata.csproj", "{3213E316-AF2E-4E48-B288-BCBBC2B84F1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{816FE297-9A8F-49DE-B8C2-B18B4D51AD18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{816FE297-9A8F-49DE-B8C2-B18B4D51AD18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{816FE297-9A8F-49DE-B8C2-B18B4D51AD18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3213E316-AF2E-4E48-B288-BCBBC2B84F1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3213E316-AF2E-4E48-B288-BCBBC2B84F1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3213E316-AF2E-4E48-B288-BCBBC2B84F1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3213E316-AF2E-4E48-B288-BCBBC2B84F1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
