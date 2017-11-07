@@ -27,6 +27,8 @@ namespace TennisKata
                     return "Deuce";
                 if (player1Score > player2Score)
                     return "Advantage Player1";
+                if (player2Score > player1Score)
+                    return "Advantage Player2";
             }
             if (player1Score > MAX_POINT_PER_GAME)
                 return "Game Player1";
