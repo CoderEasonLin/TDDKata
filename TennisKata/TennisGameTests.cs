@@ -5,134 +5,26 @@ namespace TennisKata
     [TestFixture]
     public class TennisGameTests
     {
-        [Test]
-        public void GameStartScoreShouldBe0vs0()
+        [TestCase(0, 0, "0:0")]
+        [TestCase(1, 0, "15:0")]
+        [TestCase(2, 0, "30:0")]
+        [TestCase(3, 0, "40:0")]
+        [TestCase(4, 0, "Game Player1")]
+        [TestCase(0, 1, "0:15")]
+        [TestCase(1, 1, "15:15")]
+        [TestCase(0, 4, "Game Player2")]
+        [TestCase(3, 3, "Deuce")]
+        [TestCase(4, 3, "Advantage Player1")]
+        public void TennisGameTest(int player1WinTimes, int player2WinTimes, string expected)
         {
             var game = new TennisGame();
+            for(var i = 0; i < player1WinTimes; i++)
+                game.Player1WinBall();
 
-            var expected = "0:0";
+            for(var i = 0; i < player2WinTimes; i++)
+                game.Player2WinBall();
 
             Assert.AreEqual(expected, game.Score());
         }
-
-        [Test]
-        public void Player1WinOnceShouldBe15vs0()
-        {
-            var game = new TennisGame();
-            game.Player1WinBall();
-            var expected = "15:0";
-
-            Assert.AreEqual(expected, game.Score());
-        }
-
-        [Test]
-        public void Player1WinTwiceShouldBe30vs0()
-        {
-            var game = new TennisGame();
-            game.Player1WinBall();
-            game.Player1WinBall();
-
-            var expected = "30:0";
-
-            Assert.AreEqual(expected, game.Score());
-        }
-
-        [Test]
-        public void Player1WinThirdShouldBe40vs0()
-        {
-            var game = new TennisGame();
-            game.Player1WinBall();
-            game.Player1WinBall();
-            game.Player1WinBall();
-
-            var expected = "40:0";
-
-            Assert.AreEqual(expected, game.Score());
-        }
-
-        [Test]
-        public void Player1WinForthShouldBePlayer1Win()
-        {
-            var game = new TennisGame();
-            game.Player1WinBall();
-            game.Player1WinBall();
-            game.Player1WinBall();
-            game.Player1WinBall();
-
-            var expected = "Game Player1";
-
-            Assert.AreEqual(expected, game.Score());
-        }
-
-        [Test]
-        public void Player2WinOnceShouldBe0vs15()
-        {
-            var game = new TennisGame();
-            game.Player2WinBall();
-
-            var expected = "0:15";
-
-            Assert.AreEqual(expected, game.Score());
-        }
-
-        [Test]
-        public void Player1WonOncePlayer2WinOnceShouldBe15vs15()
-        {
-            var game = new TennisGame();
-            game.Player1WinBall();
-            game.Player2WinBall();
-
-            var expected = "15:15";
-
-            Assert.AreEqual(expected, game.Score());
-        }
-
-        [Test]
-        public void Player2WinForthShouldBePlayer2Win()
-        {
-            var game = new TennisGame();
-            game.Player2WinBall();
-            game.Player2WinBall();
-            game.Player2WinBall();
-            game.Player2WinBall();
-
-            var expected = "Game Player2";
-
-            Assert.AreEqual(expected, game.Score());
-        }
-
-        [Test]
-        public void Player1WinForthPlayer2WinForthShouldBeDeuce()
-        {
-            var game = new TennisGame();
-            game.Player2WinBall();
-            game.Player2WinBall();
-            game.Player2WinBall();
-            game.Player1WinBall();
-            game.Player1WinBall();
-            game.Player1WinBall();
-
-            var expected = "Deuce";
-
-            Assert.AreEqual(expected, game.Score());
-        }
-
-        [Test]
-        public void WhenDeucePlayer1WinOnceMoreShouldBeAdvantagePlayer1()
-        {
-            var game = new TennisGame();
-            game.Player2WinBall();
-            game.Player2WinBall();
-            game.Player2WinBall();
-            game.Player1WinBall();
-            game.Player1WinBall();
-            game.Player1WinBall();
-            game.Player1WinBall();
-
-            var expected = "Advantage Player1";
-
-            Assert.AreEqual(expected, game.Score());
-        }
-
     }
 }
