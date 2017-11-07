@@ -49,9 +49,9 @@ namespace TennisKata
         public void Player2WinBall()
         {
             player2Score++;
-            if (player2Score > MAX_POINT_PER_GAME)
+            if (player2Score >= MAX_POINT_PER_GAME)
             {
-                if (player1Score > MAX_POINT_PER_GAME)
+                if (player1Score >= MAX_POINT_PER_GAME)
                     deuce = true;
             }
         }
