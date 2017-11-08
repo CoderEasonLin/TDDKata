@@ -5,8 +5,6 @@ namespace BowlingKata
 {
     public class BowlingGame
     {
-        private string[] _frames;
-
         public int Score(string frameResult)
         {
             var score = 0;
