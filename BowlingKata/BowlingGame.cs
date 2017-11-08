@@ -14,9 +14,10 @@ namespace BowlingKata
 
             _frames = ToFrames(frameResult);
 
-            for (int i = 0; i < _frames.Length; i++)
+            var frames = frameResult.Split(' ');
+            for (int i = 0; i < frames.Length; i++)
             {
-                var frame = _frames[i];
+                var frame = frames[i];
                 foreach (var token in frame)
                 {
                     if (token == '-')
