@@ -18,7 +18,7 @@ namespace BowlingKata
 
             ToFrames(frameResult);
 
-            for (var i = 0; i < _frames.Count; i++)
+            for (var i = 0; i < 10; i++)
             {
                 var frame = _frames[i];
                 score += frame.Score;
