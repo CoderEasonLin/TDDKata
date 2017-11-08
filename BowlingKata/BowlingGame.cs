@@ -14,12 +14,13 @@ namespace BowlingKata
     public class BowlingGameTests
     {
         [Test]
-        public void BowlingGameInitScoreShouldBe0()
+        public void InitScoreShouldBe0()
         {
             var game = new BowlingGame();
 
             Assert.AreEqual(0, game.Score());
         }
+
     }
 
 }
