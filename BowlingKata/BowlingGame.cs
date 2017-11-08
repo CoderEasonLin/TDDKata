@@ -4,17 +4,26 @@ namespace BowlingKata
 {
     public class BowlingGame
     {
+        private string[] _frames;
+
         public int Score(string frameResult)
         {
-            if(string.IsNullOrEmpty(frameResult))
-                return 0;
-
             var score = 0;
-            foreach (var token in frameResult)
+            if(string.IsNullOrEmpty(frameResult))
+                return score;
+
+            _frames = frameResult.Split(' ');
+
+            for (int i = 0; i < _frames.Length; i++)
             {
-                if (token == '-' || token == ' ')
-                    continue;
-                score += Convert.ToInt32(token.ToString());
+                var frame = _frames[i];
+                foreach (var token in frame)
+                {
+                    if (token == '-')
+                        continue;
+
+                    score += Convert.ToInt32(token.ToString());
+                }
             }
 
             return score;
