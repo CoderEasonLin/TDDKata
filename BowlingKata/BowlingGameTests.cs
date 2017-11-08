@@ -5,21 +5,13 @@ namespace BowlingKata
     [TestFixture]
     public class BowlingGameTests
     {
-        [Test]
-        public void InitScoreShouldBe0()
+        [TestCase("", 0)]
+        [TestCase("1- 1- 1- 1- 1- 1- 1- 1- 1- 1-", 10)]
+        public void InitScoreShouldBe0(string rollResult, int expectedScore)
         {
             var game = new BowlingGame();
 
-            Assert.AreEqual(0, game.Score(""));
+            Assert.AreEqual(expectedScore, game.Score(rollResult));
         }
-
-        [Test]
-        public void All1PinScoreShouldBe10()
-        {
-            var game = new BowlingGame();
-
-            Assert.AreEqual(10, game.Score("1- 1- 1- 1- 1- 1- 1- 1- 1- 1-"));
-        }
-
     }
 }
