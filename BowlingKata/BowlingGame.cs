@@ -84,6 +84,9 @@ namespace BowlingKata
             if (token == '-')
                 return 0;
 
+            if (token == 'X')
+                return 10;
+
             return Convert.ToInt32(token.ToString());
         }
 
