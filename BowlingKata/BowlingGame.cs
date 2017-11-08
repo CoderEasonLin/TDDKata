@@ -6,7 +6,10 @@ namespace BowlingKata
     {
         public int Score(string s)
         {
-            return 0;
+            if(string.IsNullOrEmpty(s))
+                return 0;
+
+            return 10;
         }
     }
 
