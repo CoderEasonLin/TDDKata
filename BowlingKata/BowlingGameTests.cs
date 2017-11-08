@@ -15,6 +15,7 @@ namespace BowlingKata
         [TestCase("15 1- 1/ 1/ 18 1/ 1- 1- 1- 1/ 1", 64)]
         [TestCase("15 1- 1/ 1/ 18 X 1- 1- 1- 1/ 1", 64)]
         [TestCase("15 1- 1/ 1/ 18 X X 1- 1- 1/ 1", 84)]
+        [TestCase("15 1- 1/ 1/ 18 X X 1- 1- X 1/", 93)]
         public void BowlingGameTest(string rollResult, int expectedScore)
         {
             var game = new BowlingGame();
