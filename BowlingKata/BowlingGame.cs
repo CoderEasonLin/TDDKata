@@ -30,6 +30,19 @@ namespace BowlingKata
 
                 if (frame.IsSpare)
                     score += _frames[i + 1].ScoreOfFirstRoll;
+
+                if (frame.IsStrike)
+                {
+                    if (_frames[i + 1].IsStrike)
+                    {
+                        score += _frames[i + 1].Score;
+                        score += _frames[i + 2].ScoreOfFirstRoll;
+                    }
+                    else
+                    {
+                        score += _frames[i + 1].Score;
+                    }
+                }
             }
 
             return score;
@@ -49,7 +62,7 @@ namespace BowlingKata
         {
             get
             {
-                if (_frame.IndexOf("/") == 1)
+                if (IsSpare || IsStrike)
                     return 10;
 
                 var score = 0;
@@ -78,5 +91,8 @@ namespace BowlingKata
         {
             get { return ScoreOf(_frame[0]); }
         }
+
+        public bool IsStrike {
+            get { return _frame.IndexOf("X") == 0; } }
     }
 }
