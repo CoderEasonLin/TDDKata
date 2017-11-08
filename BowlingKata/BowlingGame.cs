@@ -16,12 +16,7 @@ namespace BowlingKata
             if(string.IsNullOrEmpty(frameResult))
                 return score;
 
-            var frames = frameResult.Split(' ');
-            _frames = new List<Frame>();
-            foreach (var frame in frames)
-            {
-                _frames.Add(new Frame(frame));
-            }
+            ToFrames(frameResult);
 
             for (var i = 0; i < _frames.Count; i++)
             {
@@ -46,6 +41,16 @@ namespace BowlingKata
             }
 
             return score;
+        }
+
+        private void ToFrames(string frameResult)
+        {
+            var frames = frameResult.Split(' ');
+            _frames = new List<Frame>();
+            foreach (var frame in frames)
+            {
+                _frames.Add(new Frame(frame));
+            }
         }
     }
 
