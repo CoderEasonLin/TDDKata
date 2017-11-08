@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace BowlingKata
 {
@@ -12,27 +13,32 @@ namespace BowlingKata
             if(string.IsNullOrEmpty(frameResult))
                 return score;
 
-            _frames = ToFrames(frameResult);
-
             var frames = frameResult.Split(' ');
             for (int i = 0; i < frames.Length; i++)
             {
                 var frame = frames[i];
-                foreach (var token in frame)
+                if (frame.IndexOf("/") == 1)
                 {
-                    if (token == '-')
-                        continue;
+                    score += 10;
 
-                    score += Convert.ToInt32(token.ToString());
+                    var nextFrame = frames[i + 1];
+                    if (nextFrame[0] == '-')
+                        continue;
+                    score += Convert.ToInt32(nextFrame[0].ToString());
+                }
+                else
+                {
+                    foreach (var token in frame)
+                    {
+                        if (token == '-')
+                            continue;
+
+                        score += Convert.ToInt32(token.ToString());
+                    }
                 }
             }
 
             return score;
-        }
-
-        private string[] ToFrames(string frameResult)
-        {
-            return frameResult.Split(' ');
         }
     }
 }
