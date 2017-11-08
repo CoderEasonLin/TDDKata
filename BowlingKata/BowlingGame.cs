@@ -29,7 +29,7 @@ namespace BowlingKata
                 score += frame.Score;
 
                 if (frame.IsSpare)
-                    score += _frames[i + 1].FirstRoll;
+                    score += _frames[i + 1].ScoreOfFirstRoll;
             }
 
             return score;
@@ -74,7 +74,7 @@ namespace BowlingKata
             get { return _frame.IndexOf("/") == 1; }
         }
 
-        public int FirstRoll
+        public int ScoreOfFirstRoll
         {
             get { return ScoreOf(_frame[0]); }
         }
